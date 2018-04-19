@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>18onmouseover和onmouseout事件.html</title>
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+  </head>
+  <body>
+	<div onmouseover="mOver(this)" onmouseout="mOut(this)" 
+		style="background-color:green;width:120px;height:60px;padding:40px;color:#ffffff;">
+		把鼠标移到上面
+	</div>
+	http://localhost:8080/JavaTrainingWeb/step3_javascript/18onmouseover和onmouseout事件.html
+  </body>
+	<script language="javascript">
+	function mOver(obj){
+		obj.innerHTML="谢谢"
+	}
+	
+	function mOut(obj){
+		obj.innerHTML="把鼠标移到上面"
+	}
+	</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>28JavaScript提示框.html</title>
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+  </head>
+  <body>
+	<input type="button" onclick="disp_prompt()" value="显示提示框" />
+	http://localhost:8080/JavaTrainingWeb/step3_javascript/28JavaScript提示框.html
+  </body>
+  <script type="text/javascript">
+	function disp_prompt(){
+		var name=prompt("请输入您的名字","Bill Gates")
+		if (name!=null && name!=""){
+			document.write("你好！" + name + " 今天过得怎么样？")
+		}
+	}
+  </script>
+</html>

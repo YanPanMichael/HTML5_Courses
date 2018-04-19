@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>6验证输入.html</title>
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+  </head>
+  <body>
+    <h1>我的第一段 JavaScript</h1>
+	<p>请输入数字。如果输入值不是数字，浏览器会弹出提示框。</p>
+	<input id="demo" type="text">
+	<button type="button" onclick="myFunction()">点击这里</button>
+	http://localhost:8080/JavaTrainingWeb/step3_javascript/6验证输入.html
+  </body>
+	<script language="javascript">
+	function myFunction(){
+		var x=document.getElementById("demo").value;
+		if(x==""||isNaN(x)){
+			alert("Not Numeric");
+		}
+	}
+	</script>
+</html>

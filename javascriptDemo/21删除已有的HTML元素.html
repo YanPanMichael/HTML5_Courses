@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>21删除已有的HTML元素.html</title>
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+  </head>
+  <body>
+	<div id="div1">
+		<p id="p1">这是一个段落。</p>
+		<p id="p2">这是另一个段落。</p>
+	</div>
+	<script>
+		var parent=document.getElementById("div1");
+		var child=document.getElementById("p1");
+		parent.removeChild(child);
+	</script>
+	http://localhost:8080/JavaTrainingWeb/step3_javascript/21删除已有的HTML元素.html
+  </body>
+</html>
