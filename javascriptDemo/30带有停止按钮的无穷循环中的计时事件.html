@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>30带有停止按钮的无穷循环中的计时事件.html</title>
-    <meta name="keywords" content="keyword1,keyword2,keyword3">
-    <meta name="description" content="this is my page">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
-  </head>
-  <body>
+
+<head>
+	<title>30带有停止按钮的无穷循环中的计时事件.html</title>
+	<meta name="keywords" content="keyword1,keyword2,keyword3">
+	<meta name="description" content="this is my page">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+</head>
+
+<body>
 	<form>
 		<input type="button" value="开始计时！" onClick="timedCount()">
 		<input type="text" id="txt">
@@ -15,19 +17,19 @@
 	</form>
 	<p>请点击上面的“开始计时”按钮来启动计时器。输入框会一直进行计时，从 0 开始。点击“停止计时”按钮可以终止计时，并将计数重置为 0。</p>
 	http://localhost:8080/JavaTrainingWeb/step3_javascript/30带有停止按钮的无穷循环中的计时事件.html
-  </body>
-  <script type="text/javascript">
-	var c=0
+</body>
+<script type="text/javascript">
+	var c = 0
 	var t
-	function timedCount(){
-		document.getElementById('txt').value=c
-		c=c+1
-		t=setTimeout("timedCount()",1000)
+	function timedCount() {
+		document.getElementById('txt').value = c
+		c = c + 1
+		t = setTimeout("timedCount()", 1000)
 	}
-	
-	function stopCount(){
-		c=0;
-		setTimeout("document.getElementById('txt').value=0",0);
+
+	function stopCount() {
+		c = 0;
+		setTimeout("document.getElementById('txt').value=0", 0);
 		clearTimeout(t);
 	}
 </script>

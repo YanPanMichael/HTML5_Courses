@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>19onmousedown、onmouseup以及onclick事件.html</title>
-    <meta name="keywords" content="keyword1,keyword2,keyword3">
-    <meta name="description" content="this is my page">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
-  </head>
-  <body>
-	<div onmousedown="mDown(this)" onmouseup="mUp(this)" 
-	style="background-color:green;color:#ffffff;width:90px;height:20px;padding:40px;font-size:12px;">
+
+<head>
+	<title>19onmousedown、onmouseup以及onclick事件.html</title>
+	<meta name="keywords" content="keyword1,keyword2,keyword3">
+	<meta name="description" content="this is my page">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+</head>
+
+<body>
+	<div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:green;color:#ffffff;width:90px;height:20px;padding:40px;font-size:12px;">
 		请点击这里
 	</div>
 	http://localhost:8080/JavaTrainingWeb/step3_javascript/19onmousedown、onmouseup以及onclick事件.html
-  </body>
-	<script language="javascript">
-	function mDown(obj){
-		obj.style.backgroundColor="#1ec5e5";
-		obj.innerHTML="请释放鼠标按钮"
+</body>
+<script language="javascript">
+	function mDown(obj) {
+		obj.style.backgroundColor = "#1ec5e5";
+		obj.innerHTML = "请释放鼠标按钮"
 	}
-	
-	function mUp(obj){
-		obj.style.backgroundColor="green";
-		obj.innerHTML="请按下鼠标按钮"
+
+	function mUp(obj) {
+		obj.style.backgroundColor = "green";
+		obj.innerHTML = "请按下鼠标按钮"
 	}
-	</script>
+</script>
+
 </html>
