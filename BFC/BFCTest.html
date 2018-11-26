@@ -31,5 +31,29 @@
     <p>段落</p>
     <p>段落</p>
   </section>
+  <br>
+  <br>
+  <br>
+  <section id="layout_test">
+    <style>
+      #layout_test {
+        background-color: red;
+      }
+      #layout_test .left {
+        float: left;
+        height: 100px;
+        background-color: green;
+      }
+      #layout_test .right {
+        /* float: left; */
+        overflow: auto; /*make this element as BFC, BFC element not merge with float element, and float element itself is BFC too.*/
+        height: 150px;
+        font-size: 50px;
+        background-color: blue;
+      }
+    </style>
+    <div class="left">float element left</div>
+    <div class="right">element right</div>
+  </section>
 </body>
 </html>
