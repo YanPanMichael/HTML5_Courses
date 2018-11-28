@@ -5,13 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>DOM Event</title>
-  <script>
+  <!-- <script>
     window.document.documentElement.querySelector('body').addEventListener('onclick', function(err, callback) {
       callback();
     })
-  </script>
+  </script> -->
 </head>
 <body>
-  
+  <section>
+    <style>
+      #targetDOMElement {
+        width: 200px;
+        height: 100px;
+        background: red;
+        color: black;
+        text-align: center;
+        cursor: pointer;
+        line-height: 100px;
+      }
+    </style>
+    <div id="targetDOMElement">
+      目标元素
+    </div>
+  </section>
+  <script>
+    var tarElem = document.getElementById('targetDOMElement');
+    window.addEventListener('click', function(){}, true); //true为捕获阶段事件触发
+    document.addEventListener('click', function(){}, true); //true为捕获阶段事件触发
+    document.addEventListener('click', function(){}, true); //true为捕获阶段事件触发
+    window.addEventListener('click', function(){}, true); //true为捕获阶段事件触发
+    window.addEventListener('click', function(){}, true); //true为捕获阶段事件触发
+  </script>
 </body>
 </html>
