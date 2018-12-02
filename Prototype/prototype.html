@@ -13,12 +13,19 @@
       console.log("Constructor M function")
     }
     var o1 = new M('Petter');
-    
-    if(M.prototype === o1.__proto__) console.log("M.prototype === o1.__proto__");
-    if(M.prototype.constructor === M) console.log("M.prototype.constructor === M");
-    if(o1.__proto__.constructor === M) console.log("o1.__proto__.constructor === M");
-    if(M.__proto__ === Function.prototype) console.log("M.__proto__ === Function.prototype");
-    console.log(o1.name);
+
+    // if(M.prototype === o1.__proto__) console.log("M.prototype === o1.__proto__");
+    // if(M.prototype.constructor === M) console.log("M.prototype.constructor === M");
+    // if(o1.__proto__.constructor === M) console.log("o1.__proto__.constructor === M");
+    // if(M.__proto__ === Function.prototype) console.log("M.__proto__ === Function.prototype");
+    // console.log(o1.name);
+
+    //instanceof
+    console.log("o1 instanceof M: " + (o1 instanceof M));
+    console.log("o1 instanceof Object : " + (o1 instanceof Object));
+    console.log("o1.__proto__.constructor === M : " + (o1.__proto__.constructor===M));
+    console.log("M.prototype.__proto__ === Object.prototype : " + (M.prototype.__proto__===Object.prototype));
+    console.log("o1.__proto__.constructor === Object : " + (o1.__proto__.constructor === Object));
   </script>
 </body>
 </html>
