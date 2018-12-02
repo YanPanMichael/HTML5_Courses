@@ -26,6 +26,13 @@
     console.log("o1.__proto__.constructor === M : " + (o1.__proto__.constructor===M));
     console.log("M.prototype.__proto__ === Object.prototype : " + (M.prototype.__proto__===Object.prototype));
     console.log("o1.__proto__.constructor === Object : " + (o1.__proto__.constructor === Object));
+
+    M.prototype.say = function() {
+      console.log("say say");
+    }
+    var o2 = new M('o2');
+    console.log("o2 say"+o2.say());
+    console.log("o1 say"+o1.say());
   </script>
 </body>
 </html>
