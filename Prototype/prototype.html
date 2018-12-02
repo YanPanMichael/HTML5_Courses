@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var M = function(name) {
+      this.name = name;
+      console.log("Constructor M function")
+    }
+    var o1 = new M('Petter');
+    
+    if(M.prototype === o1.__proto__) console.log("M.prototype === o1.__proto__");
+    if(M.prototype.constructor === M) console.log("M.prototype.constructor === M");
+    if(o1.__proto__.constructor === M) console.log("o1.__proto__.constructor === M");
+    if(M.__proto__ === Function.prototype) console.log("M.__proto__ === Function.prototype");
+    console.log(o1.name);
+  </script>
+</body>
+</html>
