@@ -15,24 +15,71 @@
       console.log(this.pName);
     }
     function Child() {
-      Parent.call(this, 'parent again');
+      Parent.call(this, 'parent1 again');
       // Parent.apply(this, arguments);
-      this.cName = "child";
+      this.cName = "child1";
     }
     // console.log((new Parent("parent")).pName+" / "+(new Child).pName+" / "+(new Child).cName);
-    console.log(new Parent("parent"));
+    console.log(new Parent("parent1"));
     console.log(new Child);
 
     //原型链是继续拿继承
     function Parent2(name) {
       this.pName = name;
+      this.temp = [1,2,3];
     }
     function Child2() {
-      this.cName = "child";
+      this.cName = "child2";
     }
-    Child2.prototype = new Parent2("parent");
+    Child2.prototype = new Parent2("parent2");
     console.log(new Child2);
     console.log((new Child2).pName);
+
+    var child21 = new Child2();
+    var child22 = new Child2();
+    child21.temp.push(4);
+    console.log(child21.temp);
+    console.log(child22.temp); //缺点是两个实例相互关联，改一个另一个也会改
+    console.log(child21.__proto__ === child22.__proto__); //因为两个的原型对象都是同一个Parent2的实例
+
+    //组合模式
+    function Parent3(name) {
+      this.pName = name;
+      this.temp = [1,2,3];
+    }
+    function Child3() {
+      Parent3.call(this, "parent3");
+      this.cName = "child3";
+    }
+    Child3.prototype = Parent3.prototype;
+    console.log(new Child3);
+    console.log((new Child3).pName);
+
+    var child31 = new Child3();
+    var child32 = new Child3();
+    child31.temp.push(4);
+    console.log(child31.temp);
+    console.log(child32.temp); //实现了实例分离
+    console.log(child31.constructor); //但是constructor指向了Parent3.constructor,是因为Child3.prototype = Parent3.prototype，直接指向，中间没有间隔
+
+    //组合模式 优化1
+    function Parent4(name) {
+      this.pName = name;
+      this.temp = [1,2,3];
+    }
+    function Child4() {
+      Parent4.call(this, "parent4");
+      this.cName = "child4";
+    }
+    Child4.prototype = Object.create(Parent4.prototype); //Object.create创建一个空对象 这个空对象的.__proto__为括号中传入的参数对象，即Parent4.prototype
+    Child4.prototype.constructor = Child4;
+
+    var o4 = new Child4;
+    console.log(o4);
+    console.log(o4.pName);
+    console.log(o4 instanceof Child4);
+    console.log(o4 instanceof Parent4);
+    console.log(o4.constructor); //constructor构造函数重新指向了Child4
   </script>
 </body>
 </html>
