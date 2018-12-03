@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Inherit</title>
+</head>
+<body>
+  <script>
+    //es5
+    //构造函数实现继承
+    function Parent(name) {
+      this.pName = name;
+      console.log(this.pName);
+    }
+    function Child() {
+      Parent.call(this, 'parent again');
+      // Parent.apply(this, arguments);
+      this.cName = "child";
+    }
+    // console.log((new Parent("parent")).pName+" / "+(new Child).pName+" / "+(new Child).cName);
+    console.log(new Parent("parent"));
+    console.log(new Child);
+
+    //原型链是继续拿继承
+    function Parent2(name) {
+      this.pName = name;
+    }
+    function Child2() {
+      this.cName = "child";
+    }
+    Child2.prototype = new Parent2("parent");
+    console.log(new Child2);
+    console.log((new Child2).pName);
+  </script>
+</body>
+</html>
