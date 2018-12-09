@@ -11,5 +11,10 @@
 </head>
 <body>
   <script src="www.baidu.com/aaa.js"></script>
+  
+  <!-- uploading error message -->
+  <script>
+    (new Image()).src = `http://www.baidu.com/path${encodeURIComponent('?name=a&age=10')}`;
+  </script>
 </body>
 </html>
