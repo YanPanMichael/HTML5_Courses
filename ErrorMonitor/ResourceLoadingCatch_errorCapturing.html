@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script>
+    window.addEventListener('error', function(e){console.log("Catch Error by capturing: ", e)}, true); //true为捕获
+  </script>
+  <title>Event Capturing to catch error</title>
+</head>
+<body>
+  <script src="www.baidu.com/aaa.js"></script>
+</body>
+</html>
