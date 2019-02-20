@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Product Table</title>
+</head>
+<body>
+  <script>
+    document.write("<table border='1' cellpadding='0' cellspacing='0'>")
+    for(var i=0;i<10;i++) {
+      document.write("<tr>")
+      for (let j = 1; j <= i; j++) {
+        document.write("<td>")
+        document.write(j+"*"+i+"="+j*i)
+        document.write("</td>")
+      }
+      document.write("</tr>")
+    }
+    document.write("</table>")
+  </script>
+</body>
+</html>
