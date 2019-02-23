@@ -108,3 +108,26 @@ for(var i=0;i<arr.length-1;i++){
 console.log("Babel sorting: Version 3 ", arr);
 console.log(m);
 console.log(n);
+
+// do help myself
+var a = [2,3,1,4,3,3,6,9,8,7,1,5]
+var m = 0;
+var n=0;
+console.log(a);
+
+for (var i = 0; i < a.length -1; i++) {
+    var flag = true;
+    for (let j = 0; j < a.length-1-i; j++) {
+        if(a[j]>a[j+1]){
+            var temp = a[j+1]
+            a[j+1]=a[j]
+            a[j]=temp
+            flag = false
+        }
+        n++;
+    }
+    m++;
+    // if(flag) break;
+}
+console.log(a);
+console.log(m, n);
