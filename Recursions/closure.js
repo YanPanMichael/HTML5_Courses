@@ -21,3 +21,10 @@ function createFunctions2() {
 }
 
 console.log(createFunctions2());
+
+function F() {
+  var a = 100
+  return function() {
+    console.log(a)
+  }
+}
