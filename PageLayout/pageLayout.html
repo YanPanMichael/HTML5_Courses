@@ -184,5 +184,35 @@
       <div class="right"></div>
     </article>
   </section>
+
+  <!--  li布局  -->
+  <session class="layout ul">
+    <style>
+      .ul .left-right-center {
+        list-style: none;
+      }
+      .ul .left-right-center>li {
+        display: inline-block;
+        height: 100px;
+      }
+      .ul .left-right-center .left {
+        background-color: red;
+        width: 300px;
+      }
+      .ul .left-right-center .right {
+        background-color: green;
+        width: 300px;
+      }
+      .ul .left-right-center .center {
+        background-color: yellow;
+        width: calc(100% - 611px);
+      }
+    </style>
+    <ul class="left-right-center">
+      <li class="left">asdf</li>
+      <li class="center">fff</li>
+      <li class="right">sdfs</li>
+    </ul>
+  </session>
 </body>
 </html>
