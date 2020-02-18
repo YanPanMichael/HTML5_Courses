@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="custom">
+      <button onclick="create(event)">create custom event</button>
+      <button id="trigger" onclick="invoke(event)">trigger event</button>
+    </div>
+  </body>
+  <script>
+    var eve2;
+    function create(event) {
+      window.eve = new Event("my_event");
+      eve2 = new CustomEvent("my_event_2", {
+        detail: [1, 2, 3]
+      }); // 属性名必须为 detail 不可更改
+      document
+        .getElementById("trigger")
+        .addEventListener("my_event", function() {
+          console.log("my event callback");
+        });
+      document
+        .getElementById("trigger")
+        .addEventListener("my_event_2", function(e) {
+          console.log("my event 2 callback", e.detail);
+        });
+    }
+    function invoke(event) {
+      // window.dispatchEvent(window.eve);
+      event.currentTarget.dispatchEvent(window.eve);
+      event.currentTarget.dispatchEvent(eve2);
+    }
+
+    document.body.addEventListener("veb", function(e) {
+      alert(e.eventType);
+    });
+    var creatCustomEvent = document.createEvent("HTMLEvents");
+    // initEvent接受3个参数：
+    // 事件类型，是否冒泡，是否阻止浏览器的默认行为
+    creatCustomEvent.initEvent("veb", false, true);
+    //通过eventType传递事件信息
+    creatCustomEvent.eventType = "I love Veblen";
+    //触发document上绑定的click事件
+    document.body.dispatchEvent(creatCustomEvent);
+  </script>
+</html>

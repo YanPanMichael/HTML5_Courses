@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div id="div1">
+      <button id="button" onclick="click3(event)">button</button>
+    </div>
+  </body>
+  <script>
+    var elem = document.getElementById("div1");
+    elem.addEventListener(
+      "click",
+      function(event) {
+        console.log("click1",'event.target: '+event.target,'event.currentTarget: '+event.currentTarget);
+        // event.stopPropagation(); //阻止事件流向下一步的流动，但是不阻止当前元素其他事件相应
+        event.stopImmediatePropagation(); //阻止当前元素其他事件以及下一步事件流相应
+      },
+      true
+    );
+    elem.addEventListener(
+      "click",
+      function() {
+        console.log("click2");
+        // event.stopImmediatePropagation(); //阻止当前元素其他事件以及下一步事件流相应
+      },
+      true
+    );
+    function click3(event) {
+      console.log("click3 "+event.target.value);
+    }
+  </script>
+</html>
