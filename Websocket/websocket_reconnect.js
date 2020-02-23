@@ -12,6 +12,10 @@ var reconnection = function() {
   count = count + 1;
   console.log("reconnection...【" + count + "】");
   //1与服务器已经建立连接
+
+  if (count > MAX && socket.readyState !== 1) {
+    socket.close();
+  }
   if (count >= MAX || socket.readyState === 1) {
     clearTimeout(t);
   } else {
@@ -54,7 +58,7 @@ var onerror = function() {
 
 var connection = function() {
   var url =
-    "ws://" + window.location.host + "/ycxcode/websocket/commodity";
+    "wss://" + window.location.host + "/ycxcode/websocket/commodity?token=xxx";
   socket = new WebSocket(url);
   socket.onopen = onopen;
   socket.onmessage = onmessage;
