@@ -6,4 +6,11 @@ function find(arr, test, ctx) {
   return result;
 }
 
-var result = find()
+function isNull(el, index) {
+  return el == null;
+}
+
+const arr = [1,2,3,undefined]
+
+var result = find(arr, isNull)
+console.log(result)
